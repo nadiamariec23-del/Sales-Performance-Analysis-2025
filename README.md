@@ -5,135 +5,205 @@
 
 This project analyzes a synthetic sales dataset containing 300 transactions from 2025 to identify revenue trends, product performance, and regional sales patterns.
 
-Using Python, Pandas, and Matplotlib, I explored the dataset, calculated key performance indicators (KPIs), created visualizations, and developed business recommendations based on the findings.
+Using Python, Pandas, and Matplotlib, I explored the dataset, calculated key performance indicators (KPIs), created data visualizations, and developed business recommendations based on the findings.
 
-The goal of this project is to demonstrate my ability to transform raw data into meaningful business insights.
+The goal of this project is to demonstrate my ability to transform raw sales data into meaningful business insights that support data-driven decision-making.
+
+## View the Full Analysis
+
+**[Open My Sales Performance Analysis Notebook in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing)**
+
+The Google Colab notebook includes Python code, data exploration, revenue calculations, visualizations, business insights, and recommendations.
 
 ## Business Objectives
 
-- Analyze overall sales revenue.
+- Calculate overall sales revenue.
 - Identify the highest revenue-generating product categories.
-- Examine monthly sales trends and fluctuations.
+- Analyze monthly sales trends and fluctuations.
 - Compare revenue performance across geographical regions.
 - Identify top-performing products by revenue and units sold.
-- Develop actionable business recommendations.
+- Develop business recommendations based on the results.
 
 ## Tools & Technologies
 
-- **Python:** Data analysis and calculations
-- **Pandas:** Data cleaning, manipulation, and aggregation
-- **Matplotlib:** Data visualization
-- **Google Colab:** Development environment
-- **GitHub:** Project documentation and version control
+| Tool | Purpose |
+|---|---|
+| Python | Data analysis and calculations |
+| Pandas | Data manipulation, aggregation, and exploration |
+| Matplotlib | Creating data visualizations |
+| Google Colab | Writing and executing Python code |
+| GitHub | Project documentation and code sharing |
 
 ## Dataset
 
-The dataset contains 300 fictional sales transactions from 2025.
+The dataset contains 300 fictional sales transactions from 2025 and was created for educational and portfolio purposes.
 
-The original dataset includes the following columns:
+### Dataset Columns
 
 | Column | Description |
 |---|---|
-| order_id | Unique identifier for each transaction |
-| order_date | Date of purchase |
-| region | Geographic sales region |
+| order_id | Unique identifier for each sales transaction |
+| order_date | Date the order was placed |
+| region | Geographic region where the sale occurred |
 | category | Product category |
 | product | Product purchased |
-| quantity | Number of units purchased |
+| quantity | Number of units sold |
 | unit_price | Selling price per unit |
 
-An additional revenue column was calculated using:
+An additional `revenue` column was calculated using:
 
 ```python
 df["revenue"] = df["quantity"] * df["unit_price"]
 ```
 
-**Note:** This is a synthetic dataset created for educational and portfolio purposes. It does not represent actual company sales.
+**Note:** This is synthetic data and does not represent actual company sales.
 
 ## Data Analysis Process
 
-1. Imported the CSV dataset using Pandas.
-2. Explored the dataset and checked for missing values.
-3. Calculated total revenue.
-4. Analyzed revenue by product category.
-5. Examined monthly revenue trends.
-6. Compared regional sales performance.
-7. Evaluated individual products by revenue and quantity sold.
-8. Created visualizations and documented business insights.
+### 1. Data Import and Exploration
+
+- Imported the CSV dataset using Pandas.
+- Reviewed the first rows of the dataset.
+- Examined its structure and columns.
+- Checked for missing values.
+
+### 2. Revenue Calculation
+
+Calculated sales revenue for each transaction by multiplying quantity by unit price, then summed the results to determine total revenue.
+
+### 3. Product Category Analysis
+
+Grouped transactions by category to determine which product categories contributed the most revenue.
+
+### 4. Monthly Revenue Analysis
+
+Converted order dates into datetime format and grouped transactions by month to identify revenue trends throughout 2025.
+
+### 5. Regional Sales Analysis
+
+Compared total revenue across the North, South, East, and West regions.
+
+### 6. Product Performance Analysis
+
+Compared individual products using two metrics:
+
+- Total revenue generated.
+- Total number of units sold.
+
+### 7. Data Visualization
+
+Created bar charts and a line chart using Matplotlib to communicate the findings.
 
 ## Key Findings
 
-### 1. Overall Sales Performance
+### Overall Sales Performance
 
 **Total Revenue: $87,457**
 
-### 2. Revenue by Product Category
+### Revenue by Product Category
 
-| Category | Revenue |
-|---|---:|
-| Furniture | $51,250 |
-| Electronics | $30,573 |
-| Office Supplies | $5,634 |
+| Product Category | Revenue | Share of Revenue |
+|---|---:|---:|
+| Furniture | $51,250 | 58.6% |
+| Electronics | $30,573 | 35.0% |
+| Office Supplies | $5,634 | 6.4% |
+| **Total** | **$87,457** | **100%** |
 
-Furniture contributed approximately 58.6% of total revenue, making it the largest revenue-generating category.
+**Insight:** Furniture generated the largest share of revenue, accounting for approximately 58.6% of total sales.
 
-### 3. Monthly Sales Trends
+### Monthly Sales Trends
 
-- **Highest Revenue Month:** February — $11,460
-- **Lowest Revenue Month:** September — $4,112
-- Revenue fluctuated throughout the year.
-- Revenue increased consistently between October and December.
+- **Highest Revenue Month:** February — $11,460.
+- **Lowest Revenue Month:** September — $4,112.
+- Monthly revenue fluctuated throughout 2025.
+- Revenue increased consistently from October through December.
 
-### 4. Regional Sales Performance
+**Insight:** The differences in monthly performance suggest opportunities to investigate seasonality, purchasing patterns, and possible promotional effects.
 
-| Region | Revenue |
-|---|---:|
-| North | $25,915 |
-| West | $23,618 |
-| South | $21,775 |
-| East | $16,149 |
+### Regional Sales Performance
 
-The North region generated the highest revenue, accounting for approximately 29.6% of total sales.
+| Region | Revenue | Share of Revenue |
+|---|---:|---:|
+| North | $25,915 | 29.6% |
+| West | $23,618 | 27.0% |
+| South | $21,775 | 24.9% |
+| East | $16,149 | 18.5% |
 
-### 5. Product Performance
+**Insight:** The North region generated the highest revenue, while the East region generated the lowest. Additional analysis would be necessary to understand the reasons for these differences.
 
-- **Highest Revenue Product:** Desk — $28,210
-- **Highest Sales Volume Product:** Pens — 118 units
-- Desks and office chairs generated a combined $47,110 in revenue.
+### Product Performance
 
-The analysis demonstrates that selling more units does not necessarily mean generating more revenue.
+| Metric | Leading Product | Result |
+|---|---|---|
+| Highest Revenue | Desk | $28,210 |
+| Highest Sales Volume | Pens | 118 units |
+
+Desks and office chairs generated a combined $47,110 in revenue.
+
+**Insight:** Products with the highest sales volume do not necessarily generate the most revenue. Higher-priced products may produce significantly more revenue despite selling fewer units.
 
 ## Business Recommendations
 
-1. **Furniture Performance:** Investigate opportunities to maintain and strengthen revenue from furniture products.
-2. **Monthly Sales Trends:** Examine potential reasons for February's revenue peak and September's decline.
-3. **Regional Performance:** Analyze order volume and average order value to better understand differences across regions.
-4. **Product Strategy:** Evaluate revenue and units sold together when making product and inventory decisions.
+### 1. Strengthen High-Revenue Categories
+
+Investigate opportunities to maintain strong furniture sales and assess whether additional marketing or inventory investment could support growth.
+
+### 2. Investigate Monthly Sales Fluctuations
+
+Explore potential factors behind February's revenue peak and September's decline, including promotions, demand changes, and seasonal patterns.
+
+### 3. Evaluate Regional Performance
+
+Analyze order volume, average order value, and customer demand across regions to identify opportunities for improvement.
+
+### 4. Compare Revenue and Sales Volume
+
+Evaluate both total revenue and quantity sold when making inventory, marketing, and product strategy decisions.
 
 ## Project Limitations
 
-- The dataset is synthetic and does not represent real company performance.
-- Profit margins and product costs are unavailable, so profitability cannot be evaluated.
-- The dataset does not provide sufficient information to determine the causes of revenue fluctuations.
-- Findings are descriptive and should not be interpreted as causal relationships.
+- The dataset is synthetic and does not represent actual company performance.
+- Product costs and profit margins are unavailable, so profitability cannot be determined.
+- Customer-level information is unavailable, limiting customer behavior analysis.
+- The dataset does not establish the causes of monthly or regional performance differences.
 
 ## How to Run the Project
 
-1. Download the `Sales_Performance_Analysis_2025.ipynb` and `sales.csv` files.
-2. Open the notebook in [Google Colab](https://colab.research.google.com/).
-3. Upload `sales.csv` to the Colab working directory.
-4. Run the notebook cells in order to reproduce the analysis and visualizations.
+1. Open the [Sales Performance Analysis notebook in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing).
+2. Download the `sales.csv` dataset from this GitHub repository.
+3. Upload `sales.csv` into the Google Colab working directory.
+4. Select **Runtime → Run all** to execute the analysis.
+5. Review the generated tables, visualizations, and business insights.
 
-The notebook uses these Python libraries:
+### Required Python Libraries
 
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
 ```
 
+## Skills Demonstrated
+
+- Python programming
+- Data exploration
+- Data quality checks
+- Data manipulation with Pandas
+- Revenue and KPI calculations
+- Grouping and aggregating data
+- Time-series analysis
+- Data visualization with Matplotlib
+- Business insight development
+- Data-driven recommendations
+
 ## Conclusion
 
-This project demonstrates my foundational skills in Python programming, data exploration, data manipulation, data visualization, and business analysis.
+This project demonstrates my foundational skills in Python-based data analysis and business intelligence.
 
-Through this analysis, I practiced turning transactional sales data into clear visualizations and data-driven recommendations that can support business decision-making.
+By analyzing 300 synthetic sales transactions, I practiced transforming raw transactional data into meaningful insights through calculations, visualizations, and business recommendations.
+
+The project strengthened my ability to evaluate sales performance, identify trends, and communicate analytical findings in a clear and structured manner.
+
+---
+
+**[View the Complete Analysis in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing)**
   
