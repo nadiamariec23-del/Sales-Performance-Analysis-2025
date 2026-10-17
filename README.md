@@ -9,6 +9,30 @@ Using Python, Pandas, and Matplotlib, I performed exploratory data analysis (EDA
 
 The objective of this project is to demonstrate how raw transactional data can be transformed into meaningful insights that support data-driven business decisions.
 
+
+## Key Project Results
+
+This analysis examined 300 sales transactions from 2025 and identified the following key performance indicators (KPIs):
+
+| Key Performance Indicator | Result |
+|---|---|
+| 💰 Total Sales Revenue | **$87,457** |
+| 🛒 Total Transactions | **300** |
+| 🏆 Highest Revenue Category | **Furniture — $51,250** |
+| 📍 Highest Revenue Region | **North — $25,915** |
+| 📅 Highest Revenue Month | **February — $11,460** |
+| 📉 Lowest Revenue Month | **September — $4,112** |
+| 🪑 Highest Revenue Product | **Desk — $28,210** |
+| 📦 Most Units Sold | **Pens — 118 units** |
+
+### Key Takeaway
+
+Furniture accounted for approximately **58.6% of total revenue**, making it the strongest-performing product category.
+
+February recorded the highest monthly revenue, while the North region generated the most revenue geographically.
+
+The analysis also revealed that the product generating the highest revenue was not the product selling the most units, highlighting the importance of evaluating both revenue and sales volume.
+
 ## View the Full Analysis
 
 [View Sales Performance Analysis 2025 in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing)
