@@ -3,50 +3,50 @@
 
 ## Project Overview
 
-This project analyzes a synthetic sales dataset containing 300 transactions from 2025 to identify revenue trends, product performance, and regional sales patterns.
+This project analyzes a synthetic dataset containing 300 sales transactions from 2025 to evaluate revenue performance, identify sales trends, and uncover insights across product categories, geographical regions, and individual products.
 
-Using Python, Pandas, and Matplotlib, I explored the dataset, calculated key performance indicators (KPIs), created data visualizations, and developed business recommendations based on the findings.
+Using Python, Pandas, and Matplotlib, I performed exploratory data analysis (EDA), calculated key performance indicators (KPIs), created visualizations, and developed business recommendations based on the findings.
 
-The goal of this project is to demonstrate my ability to transform raw sales data into meaningful business insights that support data-driven decision-making.
+The objective of this project is to demonstrate how raw transactional data can be transformed into meaningful insights that support data-driven business decisions.
 
 ## View the Full Analysis
 
-**[Open My Sales Performance Analysis Notebook in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing)**
+[View Sales Performance Analysis 2025 in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing)
 
-The Google Colab notebook includes Python code, data exploration, revenue calculations, visualizations, business insights, and recommendations.
+The notebook includes Python code, data exploration, visualizations, business insights, and recommendations.
 
 ## Business Objectives
 
 - Calculate overall sales revenue.
 - Identify the highest revenue-generating product categories.
-- Analyze monthly sales trends and fluctuations.
-- Compare revenue performance across geographical regions.
-- Identify top-performing products by revenue and units sold.
-- Develop business recommendations based on the results.
+- Analyze monthly revenue trends and fluctuations.
+- Compare sales performance across geographical regions.
+- Identify top-performing products based on revenue and quantity sold.
+- Develop business recommendations based on the findings.
 
 ## Tools & Technologies
 
 | Tool | Purpose |
 |---|---|
 | Python | Data analysis and calculations |
-| Pandas | Data manipulation, aggregation, and exploration |
-| Matplotlib | Creating data visualizations |
-| Google Colab | Writing and executing Python code |
+| Pandas | Data manipulation, exploration, and aggregation |
+| Matplotlib | Data visualization |
+| Google Colab | Development environment |
 | GitHub | Project documentation and code sharing |
 
-## Dataset
+## Dataset Description
 
-The dataset contains 300 fictional sales transactions from 2025 and was created for educational and portfolio purposes.
+The dataset contains 300 fictional sales transactions recorded throughout 2025.
 
 ### Dataset Columns
 
 | Column | Description |
 |---|---|
-| order_id | Unique identifier for each sales transaction |
-| order_date | Date the order was placed |
+| order_id | Unique identifier for each transaction |
+| order_date | Date of purchase |
 | region | Geographic region where the sale occurred |
 | category | Product category |
-| product | Product purchased |
+| product | Individual product purchased |
 | quantity | Number of units sold |
 | unit_price | Selling price per unit |
 
@@ -56,154 +56,180 @@ An additional `revenue` column was calculated using:
 df["revenue"] = df["quantity"] * df["unit_price"]
 ```
 
-**Note:** This is synthetic data and does not represent actual company sales.
+**Note:** This dataset is synthetic and was created for educational and portfolio purposes. It does not represent actual company sales.
 
-## Data Analysis Process
+## Data Analysis Methodology
 
-### 1. Data Import and Exploration
+### 1. Data Exploration and Quality Checks
 
-- Imported the CSV dataset using Pandas.
-- Reviewed the first rows of the dataset.
-- Examined its structure and columns.
-- Checked for missing values.
+- Imported the dataset using Pandas.
+- Examined the dataset structure and column names.
+- Reviewed sample transactions.
+- Checked for missing values across all columns.
+- Converted order dates into a format suitable for time-based analysis.
 
 ### 2. Revenue Calculation
 
-Calculated sales revenue for each transaction by multiplying quantity by unit price, then summed the results to determine total revenue.
+Calculated revenue for each transaction using:
 
-### 3. Product Category Analysis
+`Revenue = Quantity × Unit Price`
 
-Grouped transactions by category to determine which product categories contributed the most revenue.
+Aggregated individual transactions to determine total sales revenue.
+
+### 3. Revenue by Product Category
+
+Grouped sales transactions by product category to identify the categories generating the highest revenue.
 
 ### 4. Monthly Revenue Analysis
 
-Converted order dates into datetime format and grouped transactions by month to identify revenue trends throughout 2025.
+Aggregated revenue by month to identify fluctuations, peak-performing periods, and sales trends throughout 2025.
 
 ### 5. Regional Sales Analysis
 
-Compared total revenue across the North, South, East, and West regions.
+Compared revenue generated across the North, South, East, and West regions to identify differences in sales performance.
 
 ### 6. Product Performance Analysis
 
-Compared individual products using two metrics:
+Evaluated individual products based on:
 
-- Total revenue generated.
-- Total number of units sold.
+- Total revenue generated
+- Total quantity sold
 
-### 7. Data Visualization
+This comparison helped identify differences between high-revenue and high-volume products.
 
-Created bar charts and a line chart using Matplotlib to communicate the findings.
+## Key Findings & Business Insights
 
-## Key Findings
+### 1. Overall Sales Performance
 
-### Overall Sales Performance
+**Total Sales Revenue: $87,457**
 
-**Total Revenue: $87,457**
+The dataset generated $87,457 in total sales revenue across 300 transactions.
 
-### Revenue by Product Category
+### 2. Revenue by Product Category
 
-| Product Category | Revenue | Share of Revenue |
+| Product Category | Total Revenue | Revenue Share |
 |---|---:|---:|
 | Furniture | $51,250 | 58.6% |
 | Electronics | $30,573 | 35.0% |
 | Office Supplies | $5,634 | 6.4% |
 | **Total** | **$87,457** | **100%** |
 
-**Insight:** Furniture generated the largest share of revenue, accounting for approximately 58.6% of total sales.
+**Business Insight:**
 
-### Monthly Sales Trends
+Furniture was the largest revenue-generating category, accounting for approximately 58.6% of total revenue.
 
-- **Highest Revenue Month:** February — $11,460.
-- **Lowest Revenue Month:** September — $4,112.
+Electronics contributed 35.0%, while Office Supplies represented 6.4%.
+
+These findings indicate that furniture products are major revenue drivers within the dataset.
+
+### 3. Monthly Sales Trends
+
+- **Highest Revenue Month:** February — $11,460
+- **Lowest Revenue Month:** September — $4,112
 - Monthly revenue fluctuated throughout 2025.
 - Revenue increased consistently from October through December.
 
-**Insight:** The differences in monthly performance suggest opportunities to investigate seasonality, purchasing patterns, and possible promotional effects.
+**Business Insight:**
 
-### Regional Sales Performance
+February generated the highest monthly revenue, while September recorded the lowest.
 
-| Region | Revenue | Share of Revenue |
+These fluctuations highlight opportunities to investigate potential seasonal patterns, promotional activity, and changes in customer demand.
+
+Additional information would be necessary to determine the specific causes of these changes.
+
+### 4. Regional Sales Performance
+
+| Region | Total Revenue | Revenue Share |
 |---|---:|---:|
 | North | $25,915 | 29.6% |
 | West | $23,618 | 27.0% |
 | South | $21,775 | 24.9% |
 | East | $16,149 | 18.5% |
 
-**Insight:** The North region generated the highest revenue, while the East region generated the lowest. Additional analysis would be necessary to understand the reasons for these differences.
+**Business Insight:**
 
-### Product Performance
+The North region generated the highest revenue, contributing approximately 29.6% of total sales.
 
-| Metric | Leading Product | Result |
+The East region generated the lowest revenue, accounting for approximately 18.5%.
+
+Further analysis of order volume, average order value, and customer demand could help explain these regional differences.
+
+### 5. Product Performance
+
+| Performance Metric | Product | Result |
 |---|---|---|
 | Highest Revenue | Desk | $28,210 |
 | Highest Sales Volume | Pens | 118 units |
 
-Desks and office chairs generated a combined $47,110 in revenue.
+Desks and office chairs generated a combined $47,110 in sales revenue.
 
-**Insight:** Products with the highest sales volume do not necessarily generate the most revenue. Higher-priced products may produce significantly more revenue despite selling fewer units.
+**Business Insight:**
+
+Desks generated the highest revenue, while pens recorded the highest number of units sold.
+
+This demonstrates that products with the highest sales volume do not necessarily generate the greatest revenue.
+
+Product pricing plays an important role in overall revenue performance.
 
 ## Business Recommendations
 
-### 1. Strengthen High-Revenue Categories
+### 1. Strengthen High-Revenue Product Categories
 
-Investigate opportunities to maintain strong furniture sales and assess whether additional marketing or inventory investment could support growth.
+Investigate opportunities to sustain strong furniture sales and assess whether additional marketing or inventory investment could support future growth.
 
-### 2. Investigate Monthly Sales Fluctuations
+### 2. Investigate Monthly Revenue Fluctuations
 
-Explore potential factors behind February's revenue peak and September's decline, including promotions, demand changes, and seasonal patterns.
+Analyze factors that may have contributed to February's revenue peak and September's decline, including seasonal demand, promotions, and purchasing patterns.
 
-### 3. Evaluate Regional Performance
+### 3. Evaluate Regional Sales Opportunities
 
-Analyze order volume, average order value, and customer demand across regions to identify opportunities for improvement.
+Examine regional order volumes, average order values, and customer demand to better understand performance differences and identify potential growth opportunities.
 
-### 4. Compare Revenue and Sales Volume
+### 4. Balance Revenue and Sales Volume
 
-Evaluate both total revenue and quantity sold when making inventory, marketing, and product strategy decisions.
+Evaluate both revenue and quantity sold when making product, inventory, and marketing decisions.
+
+High-volume products may contribute differently to overall business performance than higher-priced products.
 
 ## Project Limitations
 
-- The dataset is synthetic and does not represent actual company performance.
-- Product costs and profit margins are unavailable, so profitability cannot be determined.
+- The dataset is synthetic and does not reflect actual business performance.
+- Product costs and profit margins are unavailable, preventing profitability analysis.
 - Customer-level information is unavailable, limiting customer behavior analysis.
-- The dataset does not establish the causes of monthly or regional performance differences.
+- The dataset does not establish the causes of monthly or regional revenue fluctuations.
+- Findings are descriptive and should not be interpreted as causal relationships.
 
 ## How to Run the Project
 
-1. Open the [Sales Performance Analysis notebook in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing).
-2. Download the `sales.csv` dataset from this GitHub repository.
-3. Upload `sales.csv` into the Google Colab working directory.
-4. Select **Runtime → Run all** to execute the analysis.
-5. Review the generated tables, visualizations, and business insights.
+1. Open the Google Colab notebook using the link provided near the beginning of this README.
+2. Download the `sales.csv` file from this GitHub repository.
+3. Upload the CSV file into the Google Colab working directory.
+4. Select **Runtime → Run all** to execute the Python code.
+5. Review the resulting calculations, visualizations, and business insights.
 
 ### Required Python Libraries
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-```
+- Pandas
+- Matplotlib
 
 ## Skills Demonstrated
 
 - Python programming
-- Data exploration
+- Exploratory Data Analysis (EDA)
 - Data quality checks
-- Data manipulation with Pandas
+- Data manipulation using Pandas
 - Revenue and KPI calculations
-- Grouping and aggregating data
+- Data aggregation and grouping
 - Time-series analysis
 - Data visualization with Matplotlib
-- Business insight development
-- Data-driven recommendations
+- Business performance evaluation
+- Analytical reporting
+- Data-driven business recommendations
 
 ## Conclusion
 
-This project demonstrates my foundational skills in Python-based data analysis and business intelligence.
+This project demonstrates my foundational skills in Python-based data analysis, data visualization, and business intelligence.
 
-By analyzing 300 synthetic sales transactions, I practiced transforming raw transactional data into meaningful insights through calculations, visualizations, and business recommendations.
+Through the analysis of 300 synthetic sales transactions, I transformed raw transactional data into structured insights highlighting revenue trends, product performance, and regional differences.
 
-The project strengthened my ability to evaluate sales performance, identify trends, and communicate analytical findings in a clear and structured manner.
-
----
-
-**[View the Complete Analysis in Google Colab](https://colab.research.google.com/drive/1zwEVkYKiMRkvwsL1u0WkSxvduYxl5qgP?usp=sharing)**
-  
+The project strengthened my ability to use analytical tools, interpret business metrics, communicate findings, and develop recommendations that support informed business decision-making.
